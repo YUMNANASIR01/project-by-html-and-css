@@ -859,8 +859,8 @@
   
   
   footer {
-    width: 1572px;
     height: 22.9375rem;
+     width: 100%;
     border: .125rem solid transparent;
     padding-top: 3.375rem;
     display: flex;
@@ -896,20 +896,23 @@
   .footerSecDiv {
     /* width: 13.25rem; */
     /* height: 15.6875rem; */
-    width: 18.75rem;
+    width: 20.625rem;
     height: 18.75rem;
     border: .125rem solid transparent;
     display: flex;
     flex-direction: column;
-    row-gap: 1.5625rem;
+    /* row-gap: 1.5625rem; */
     border-right: .125rem solid #7bad2d;
+    padding: 10px 12px 12px 12px;
+  
   }
   
   .footerSecDiv h1 {
-    margin-top: -0.3125rem;
+    /* margin-top: -0.3125rem; */
     text-transform: uppercase;
     font-size: 1.625rem;
     color: white;
+    padding-top: 10px;
   }
   
   .footerSecDiv ul {
@@ -1001,5 +1004,7 @@
    }.footerSecDiv {
     background-color: #668e19;
     margin-left: 400px;
+   }.footer{
+    width: 1572px;
    }}
 
