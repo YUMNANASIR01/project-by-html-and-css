@@ -859,7 +859,7 @@
   
   
   footer {
-    width: 166%;
+    width: 1578px;
     height: 22.9375rem;
     border: .125rem solid transparent;
     padding-top: 3.375rem;
@@ -939,51 +939,67 @@
 
   @media screen and (max-width: 768px) {
     .header{
-      width: 166%;
+      width: 206%;
       
     }.buttonDiv{
       margin-left: 40px;
     }
+    .processiconsdiv{
+     margin-left: 200px;
+    }
     .sliderImgDiv{
-      width: 166%;
+      width: 206%;
+    }
+    .iconsDiv {
+     margin-left: 80px;
     }
     .adv_top{
-      margin-left: 280px;
+      margin-left: 400px;
     }.aboutUs_Div{
-      width: 166%;
-    }.iconsDiv{
-      margin-left: 22px;
-    }.servicesTopDiv h1{
-      margin-left: 520px;
+      width: 206%;
     }
+    .servicesTopDiv h1{
+      margin-left: 600px;
+      display: flex;
+    }
+    .starCardDiv{
+      margin-left: 100px;
+    }
+    .roundstar{
+      justify-content: center;
+      align-items: center;
+      right: 20%;
+    }
+    .icondiv{
+      width: 206%;
+      height: 400px;
+    }
+  
     .servicesTopDiv pre{
-      margin-left: 350px;
+      margin-left: 500px;
     }
    .portfolioDiv{
     margin-top: 50px;
-    width: 166%;
+    width: 206%;
    }.processdiv h1{
-    margin-left: 435px;
+    width: 206%;
    }.processdiv pre{
-    margin-left: 435px;
+    width: 206%;
    }.icondiv{
-    width: 169%;
+    width: 206%;
     margin-bottom: 20px;
    }.aboutdiv{
-    width: 166%;
+    width: 206%;
    }.skillsDiv{
-    width: 166%;
+    width: 206%;
    }.progressCard{
-    width: 166%;
+    width: 206%;
    }.contactDiv{
-    width: 166%;
+    width: 206%;
    }.contactUsDiv{
-    width: 166%;
+    width: 206%;
    }.footerSecDiv {
     background-color: #668e19;
     margin-left: 400px;
-   }.footerSecDiv{
-    width: 266%;
-   }
-  }
+   }}
 
