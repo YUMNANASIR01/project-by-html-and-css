@@ -984,9 +984,6 @@
       height: 25rem;
     }
   
-    /* .servicesTopDiv pre{
-      margin-right: 900px;
-    } */
    .portfolioDiv{
     margin-top: 3.125rem;
     width: 206%;
@@ -1129,6 +1126,11 @@
     .processiconsdiv .icondiv .circlediv::after {
       width: 40px; 
     }
+    .mypara {
+      position: absolute;
+      right: 100%;
+      top: 120%;
+    }
   }
 
 
@@ -1137,10 +1139,10 @@
   @media (max-width: 390px) {
 
     .header{
-      width: 205%;
+      width: 207%;
       
     }.maindiv{
-      width: 590px;
+      width: 752px;
     }.navList{
       padding-top: 10px;
     }.img_content h1{
@@ -1156,19 +1158,19 @@
       width: 206%;
     }
     .iconsDiv {
-     margin-left: 20px;
+     margin-left: 70px;
     }
     .adv_top{
-      margin-left: 300px;
+      margin-left: 360px;
     }.aboutUs_Div{
       width: 206%;
     }
     .servicesTopDiv h1{
-      margin-left: 450px;
+      margin-left: 590px;
       display: flex;
     }
     .starCardDiv{
-      margin-left: 10px;
+      margin-left: 80px;
     }
     .roundstar{
       justify-content: center;
@@ -1224,11 +1226,11 @@
 
   @media (max-width: 390px) {
     .processdiv h1 {
-      font-size: 12px; 
+      font-size: 20px; 
     }
   
     .processiconsdiv {
-      gap: 90px; 
+      gap: 120px; 
     }
   
     .processiconsdiv .icondiv {
@@ -1245,4 +1247,11 @@
     .processiconsdiv .icondiv .circlediv::after {
       width: 40px; 
     }
+    .mypara {
+      position: absolute;
+      right: 100%;
+      top: 120%;
+    }
   }
+
+
