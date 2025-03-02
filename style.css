@@ -12,7 +12,6 @@
   .imgDiv{
     position: absolute;
     z-index: -1;
-    /* display: none; */
   }
   
   .imgDiv img{
@@ -26,20 +25,37 @@
   
   .headerTopDiv{
     width: 100%;
-    height: 52px;
+    height: 3.25rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #212121;
   }
   
+  @media (max-width: 768px) {
+    .headerTopDiv {
+      flex-direction: column;
+      height: auto; /* Allows height to adjust based on content */
+      padding: 8px;
+    }
+    
+    .imgDiv img {
+      width: 100%;
+      height: auto; /* Ensures image scales correctly */
+    }
+    .navList li{
+      margin-right: 60px;
+    }
+  }
+
+
   .socialIconDiv{
-    width: 220px;
+    width: 13.75rem;
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 29px;
-    gap: 5px; 
+    padding-left: 1.8125rem;
+    gap: .3125rem; 
   }
   
   .circleIcon{
@@ -52,6 +68,31 @@
     justify-content: center;
   }
   
+  /* Responsive Adjustments */
+@media (max-width: 768px) {
+  .socialIconDiv {
+    width: auto; /* Allows flex container to adjust to available space */
+    padding-left: 15px; /* Reduces padding for smaller screens */
+    gap: 8px; /* Slightly increases gap for better spacing on small screens */
+  }
+
+  .circleIcon {
+    width: 28px; /* Slightly smaller icon size for small screens */
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .socialIconDiv {
+    padding-left: 10px;
+    gap: 10px;
+  }
+
+  .circleIcon {
+    width: 24px; /* Further reduction for very small screens */
+    height: 24px;
+  }
+}
   .phoneIconDiv{
     width: 542px;
     height: 100%;
@@ -64,6 +105,27 @@
     font-weight: 600;
     color: white;
     letter-spacing: 1px;
+  }
+
+
+  @media (max-width: 768px) {
+    .phoneIconDiv {
+      width: 80%; /* Adapts width to available space */
+    }
+  
+    .phoneIconDiv p {
+      font-size: 18px; /* Slightly smaller font for better fit on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .phoneIconDiv {
+      width: 100%; /* Full width on very small screens */
+    }
+  
+    .phoneIconDiv p {
+      font-size: 16px; /* Further reduction for very small screens */
+    }
   }
   
   .phoneIconDiv .callBtn {
@@ -84,7 +146,30 @@
     justify-content: space-between;
     background-color: white;
   }
+  @media (max-width: 768px) {
+    .phoneIconDiv .callBtn {
+      padding: 5px 6px; /* Slightly smaller padding */
+      font-size: 11px;  /* Reduced font size */
+    }
   
+    .navBar {
+      height: 70px; /* Reduce height for better mobile fit */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .phoneIconDiv .callBtn {
+      padding: 4px 5px; /* Further reduction in padding */
+      font-size: 10px;  /* Smaller font size for small screens */
+    }
+  
+    .navBar {
+      height: 100px; /* More height reduction for mobile */
+      flex-direction: column; /* Stack elements vertically if needed */
+      align-items: center; /* Center align on very small screens */
+    }
+  }
+
   .navBar img {
     margin-left: 34px;
     width: 149px;
@@ -96,28 +181,104 @@
     display: flex;
     align-items: center;
     gap: 22px;
-    /* display: none; */
   }
-  
+ 
   .navList li{
     list-style: none;
-  
   }
-  
+  /* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .navList {
+    width: 10%; /* Allow full width for smaller screens */
+     /* Space items evenly */
+    font-size: 12px;
+    margin-right: 800px;
+     /* Reduce gap on smaller screens */
+  }
+
+  .navList li a {
+    font-size: 10px; 
+    /* Reduce font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .navBar img {
+    margin-left: 20px; /* Adjust image margin for smaller screens */
+    width: 120px; /* Smaller logo for small screens */
+  }
+
+  .navList {
+    flex-direction: column; /* Stack navbar items vertically */
+    width: 100%; /* Full width */
+    align-items: flex-start; /* Align items to the left */
+     /* Reduce space between items */
+    padding-top: 10px; /* Add padding to the top */
+  }
+
+  .navList li {
+    margin-bottom: 10px; 
+    margin-right: 20px;/* Space out links vertically */
+  }
+
+  .navList li a {
+    font-size: 12px; /* Smaller font size for smaller screens */
+    /* Add vertical padding to links */
+  }
+}
+ 
+
   .navList li a{
     font-size: 17px;
     font-weight: 600;
     text-decoration: none;
     color: black;
   }
+  .navList li a:hover{
+    color: #ff831e;
+  }
   
   .sliderImgDiv {
     width: 100%;
     height: 524px;
-    /* display: none; */
+  }
+  @media (max-width: 480px) {
+    .navList li a {
+      font-size: 10px; /* Slightly smaller font for readability */
+      
+    }
+  
+    .sliderImgDiv {
+      height: 500px; 
+      width: 200px;
+      padding-bottom: 300px;/* Adjust height for smaller screens */
+    }
   }
   
-  /* swiper */
+  @media (max-width: 768px) {
+    .navList li a {
+      font-size: 15px; /* Reduce font size for mobile */
+    }
+  
+    .sliderImgDiv {
+      height: 400px; /* Further reduce height for mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navList li a {
+      font-size: 14px;
+      text-decoration: none;
+      
+       /* Compact font size for smaller screens */
+    }.navList{
+      padding-right: 20px;
+    }
+  
+    .sliderImgDiv {
+      height: 300px; /* Compact height for very small screens */
+    }
+  }
   .swiper {
     width: 100%;
     height: 100%;
@@ -133,6 +294,23 @@
     display: block;
     width: 100%;
   }
+  @media (max-width: 1024px) {
+    .swiper {
+      height: 80%; /* Adjust height for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .swiper {
+      height: 60%; /* Further reduce height for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .swiper {
+      height: 50%; /* Compact height for mobile devices */
+    }
+  }
   
   .img_content {
     width: 100%;
@@ -146,7 +324,19 @@
     display: flex;
     justify-content: space-between;
   }
+  @media (max-width: 768px) {
+    .img_content {
+      height: 200px; /* Adjust height for smaller screens */
+      top: 120px; /* Adjust top position */
+    }
+  }
   
+  @media (max-width: 480px) {
+    .img_content {
+      height: 160px; /* Further reduce height for mobile */
+      top: 100px; /* Adjust top position for mobile */
+    }
+  }
   
   .leftDiv {
     width: 347px;
@@ -160,6 +350,23 @@
     background-color: #a2d84c;
   }
   
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leftDiv,
+  .rightDiv {
+    width: 100%; /* Make them full width on smaller screens */
+  }
+}
+
+/* Optional adjustment for stacking */
+@media (max-width: 480px) {
+  .container { /* Assuming there's a parent container */
+    display: flex;
+    flex-direction: column; /* Stack left and right divs vertically */
+    align-items: center;
+  }
+}
   .img_content h1 {
     font-size: 62px;
     color: white;
@@ -171,7 +378,39 @@
     margin-top: 27px;
     text-align: center;
   }
+  @media (max-width: 768px) {
+    .img_content h1 {
+      font-size: 48px; /* Adjust font size on smaller screens */
+    }
+  }
   
+  @media (max-width: 480px) {
+    .img_content h1 {
+      font-size: 36px; /* Further adjust font size for very small screens */
+    }
+  }
+  
+  .img_contentBottomDiv {
+    width: 100%;
+    height: 141px;
+    margin-top: 27px;
+    text-align: center;
+  }
+  
+  /* Responsive adjustments for the bottom div */
+  @media (max-width: 768px) {
+    .img_contentBottomDiv {
+      height: 120px; /* Reduce height on smaller screens */
+      margin-top: 20px; /* Adjust margin */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .img_contentBottomDiv {
+      height: 100px; /* Further reduce height for very small screens */
+      margin-top: 15px; /* Further adjust margin */
+    }
+  }
   .img_contentBottomDiv  pre{
     font-size: 21px;
     color: white;
@@ -187,11 +426,50 @@
     font-weight: 600;
     border-radius: 6px;
   }
+  @media (max-width: 768px) {
+    .img_contentBottomDiv pre {
+      font-size: 18px; /* Reduce font size on smaller screens */
+    }
+  }
   
+  @media (max-width: 480px) {
+    .img_contentBottomDiv pre {
+      font-size: 16px; /* Further reduce font size for very small screens */
+    }
+  }
+  
+  .buttonDiv button {
+    margin-top: 40px; /* Default margin */
+    font-size: 18px;  /* Default font size */
+    padding: 12px 41px; /* Default padding */
+    border: none;
+    outline: none;
+    background-color: #febd19;
+    font-weight: 600;
+    border-radius: 6px;
+  }
+  
+  /* Responsive button adjustments */
+  @media (max-width: 768px) {
+    .buttonDiv button {
+      margin-top: 30px; /* Adjust margin for smaller screens */
+      font-size: 16px;  /* Reduce font size for better readability */
+      padding: 10px 30px; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .buttonDiv button {
+      margin-top: 20px; /* Further adjust margin for very small screens */
+      font-size: 14px;  /* Further reduce font size for very small screens */
+      padding: 8px 20px; /* Further adjust padding for smaller screens */
+    }
+  }
   .advantageDiv {
     width: 100%;
     height: 489px;
     background-color: white;
+    padding-right: 40px;
   }
   
   .adv_top {
@@ -199,7 +477,38 @@
     height: 130px;
     text-align: center;
   }
+  @media (max-width: 768px) {
+    .advantageDiv {
+      height: auto; /* Adjust height for smaller screens */
+      padding-right: 20px; /* Reduce padding for smaller screens */
+    }
+  }
   
+  @media (max-width: 480px) {
+    .advantageDiv {
+      height: auto; /* Ensure height is flexible on very small screens */
+      padding-right: 10px; /* Further reduce padding */
+    }
+  }
+  
+  .adv_top {
+    width: 100%;
+    height: 130px; /* Default height */
+    text-align: center;
+  }
+  
+  /* Responsive adjustments for adv_top */
+  @media (max-width: 768px) {
+    .adv_top {
+      height: 100px; /* Reduce height for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .adv_top {
+      height: 80px; /* Further reduce height for very small screens */
+    }
+  }
   .adv_top h1 {
     font-size: 46px;
     margin-top: 32px;
@@ -209,7 +518,19 @@
   .sp1{
     color: black;
   }
+  @media (max-width: 768px) {
+    .adv_top h1 {
+      font-size: 36px; /* Smaller font size for tablets */
+      margin-top: 24px; /* Adjust top margin for smaller screens */
+    }
+  }
   
+  @media (max-width: 480px) {
+    .adv_top h1 {
+      font-size: 28px; /* Even smaller font size for mobile screens */
+      margin-top: 16px; /* Adjust top margin further */
+    }
+  }
   .advantageDiv pre {
     margin-top: 9px;
     font-size: 17px;
@@ -230,7 +551,63 @@
     width: 215px;
     text-align: center;
   }
+  @media (max-width: 768px) {
+    .advantageDiv pre {
+      font-size: 15px; /* Slightly smaller font for tablets */
+    }
+  }
   
+  @media (max-width: 480px) {
+    .advantageDiv pre {
+      font-size: 13px; /* Even smaller font for mobile screens */
+    }
+  }
+  
+  .bottomIcons {
+    width: 100%;
+    height: 263px;
+    margin-top: 9px;
+    padding-left: 58px;
+    display: flex;
+    gap: 36px;
+    justify-content: space-between; /* Ensures space between icons */
+    flex-wrap: wrap; /* Allows the icons to wrap on smaller screens */
+  }
+  
+  /* Adjustments for .bottomIcons on smaller screens */
+  @media (max-width: 768px) {
+    .bottomIcons {
+      padding-left: 20px; /* Reduce padding for tablets */
+      gap: 20px; /* Adjust space between icons */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bottomIcons {
+      padding-left: 10px; /* Further reduce padding for mobile */
+      gap: 10px; /* Reduce space between icons */
+    }
+  }
+  
+  .iconsDiv {
+    height: 100%;
+    width: 215px;
+    text-align: center;
+    flex-shrink: 0; /* Prevents shrinking when the screen size reduces */
+  }
+  
+  /* Responsive adjustments for .iconsDiv */
+  @media (max-width: 768px) {
+    .iconsDiv {
+      width: 160px; /* Adjust icon div width for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .iconsDiv {
+      width: 120px; /* Adjust icon div width for mobile */
+    }
+  }
   .roundDiv {
     width: 170px;
     height: 170px;
@@ -245,7 +622,19 @@
       box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
     }
   }
+  @media (max-width: 768px) {
+    .roundDiv {
+      width: 150px; /* Slightly smaller circle for tablets */
+      height: 150px; /* Maintain proportionality */
+    }
+  }
   
+  @media (max-width: 480px) {
+    .roundDiv {
+      width: 130px; /* Even smaller circle for mobile */
+      height: 130px; /* Maintain proportionality */
+    }
+  }
   .iconH1 {
     font-size: 18px;
     margin-top: 15px;
@@ -258,7 +647,25 @@
     font-weight: 600;
     color: #cbc7c7;
   }
+  @media (max-width: 768px) {
+    .iconH1 {
+      font-size: 16px; /* Reduce font size for tablets */
+    }
   
+    .iconsDiv p {
+      font-size: 12px; /* Reduce font size for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .iconH1 {
+      font-size: 14px; /* Further reduce font size for mobile */
+    }
+  
+    .iconsDiv p {
+      font-size: 10px; /* Further reduce font size for mobile */
+    }
+  }
   .aboutUs_Div {
     width: 100%;
     height: 468px;
@@ -293,12 +700,68 @@
     margin-left: 84px;
     margin-top: -3px;
   }
+  @media (max-width: 1024px) {
+    .aboutUs_Div h1 {
+      font-size: 36px; /* Reduce heading size for medium screens */
+    }
   
+    .aboutUs_Div .paraDiv {
+      margin-left: 60px; /* Adjust margin */
+      width: 450px; /* Reduce width */
+    }
+  
+    .aboutUs_Div .paraDiv p {
+      font-size: 12px; /* Adjust font size for better readability */
+    }
+  
+    .aboutUs_Div .buttonDiv {
+      margin-left: 60px; /* Adjust margin */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .aboutUs_Div h1 {
+      font-size: 30px; /* Further reduce heading size for smaller screens */
+    }
+  
+    .aboutUs_Div .paraDiv {
+      margin-left: 40px; /* Adjust margin */
+      width: 350px; /* Further reduce width */
+    }
+  
+    .aboutUs_Div .paraDiv p {
+      font-size: 10px; /* Reduce font size */
+    }
+  
+    .aboutUs_Div .buttonDiv {
+      margin-left: 40px; /* Adjust margin */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .aboutUs_Div h1 {
+      font-size: 24px; /* Further reduce heading size for mobile */
+    }
+  
+    .aboutUs_Div .paraDiv {
+      margin-left: 20px; /* Adjust margin */
+      width: 280px; /* Further reduce width */
+    }
+  
+    .aboutUs_Div .paraDiv p {
+      font-size: 10px; /* Keep font size small for mobile */
+    }
+  
+    .aboutUs_Div .buttonDiv {
+      margin-left: 20px; /* Adjust margin */
+    }
+  }
   .servicesDiv {
     width: 100%;
     height: 473px;
     border: 2px solid transparent;
     background-color: white;
+    padding-right: 60px;
   }
   
   .servicesDiv h1 {
@@ -324,7 +787,53 @@
     gap: 20px;
     padding-left: 79px;
   }
+  @media (max-width: 1024px) {
+    .servicesDiv h1 {
+      font-size: 36px; /* Reduce heading size */
+    }
   
+    .servicesDiv pre {
+      font-size: 14px; /* Adjust font size */
+    }
+  
+    .servicesBottomDiv {
+      padding-left: 40px; /* Adjust left padding */
+    }
+  }
+  
+  /* For tablets or larger mobile devices (max-width: 768px) */
+  @media (max-width: 768px) {
+    .servicesDiv h1 {
+      font-size: 30px; /* Further reduce heading size */
+    }
+  
+    .servicesDiv pre {
+      font-size: 13px; /* Further adjust font size */
+    }
+  
+    .servicesBottomDiv {
+      flex-direction: column; /* Stack items vertically */
+      gap: 15px; /* Reduce gap between items */
+      padding-left: 20px; /* Adjust padding */
+    }
+  }
+  
+  /* For small mobile devices (max-width: 480px) */
+  @media (max-width: 480px) {
+    .servicesDiv h1 {
+      font-size: 24px; /* Further reduce heading size */
+    }
+  
+    .servicesDiv pre {
+      font-size: 12px; /* Keep font size smaller */
+    }
+  
+    .servicesBottomDiv {
+      flex-direction: column; /* Stack items vertically */
+      gap: 10px; /* Further reduce gap */
+      padding-left: 10px; /* Adjust padding for mobile */
+    }
+  }
   .starCardDiv {
     position: relative;
     margin-top: 63px;
@@ -335,14 +844,37 @@
     text-align: center;
     background-color: #f2f2f2;
     transition: all 0.3s ease-in-out;
-  
-  
+     margin-left: 50px;
+   
     &:hover{
       box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
       transform: scale(1.03);
     }
   }
+  @media (max-width: 1024px) {
+    .starCardDiv {
+      width: 250px; /* Slightly reduce width */
+      height: 200px; /* Adjust height for medium screens */
+    }
+  }
   
+  /* For tablets or smaller devices (max-width: 768px) */
+  @media (max-width: 768px) {
+    .starCardDiv {
+      width: 220px; /* Reduce width further */
+      height: 180px; /* Adjust height for smaller screens */
+      margin-top: 40px; /* Adjust top margin for better spacing */
+    }
+  }
+  
+  /* For mobile devices (max-width: 480px) */
+  @media (max-width: 480px) {
+    .starCardDiv {
+      width: 180px; /* Reduce width for mobile */
+      height: 160px; /* Reduce height for mobile */
+      margin-top: 20px; /* Adjust top margin */
+    }
+  }
   .roundstar {
     position: absolute;
     top: -38px;
@@ -372,7 +904,65 @@
     color: rgb(155, 154, 154);
     margin-bottom: 20px;
   }
+  @media (max-width: 1024px) {
+    .roundstar {
+      top: -30px; /* Adjust top for better positioning */
+      left: 80px; /* Adjust left for better alignment */
+      height: 60px; /* Reduce size for medium screens */
+      width: 60px; /* Reduce size for medium screens */
+    }
+  }
   
+  /* For mobile devices */
+  @media (max-width: 768px) {
+    .roundstar {
+      top: -25px; /* Fine-tune positioning */
+      left: 60px; /* Fine-tune left position */
+      height: 50px; /* Reduce size for smaller screens */
+      width: 50px; /* Reduce size for smaller screens */
+    }
+  }
+  
+  /* For very small devices (max-width: 480px) */
+  @media (max-width: 480px) {
+    .roundstar {
+      top: -20px; /* Adjust top for smaller screens */
+      left: 50px; /* Adjust left for smaller screens */
+      height: 45px; /* Further reduce size */
+      width: 45px; /* Further reduce size */
+    }
+  }
+  
+  .starCardDiv h1 {
+    font-size: 16px;
+    margin-top: 65px;
+    font-weight: 600;
+    color: black;
+  }
+  
+  /* Responsive font size for h1 */
+  @media (max-width: 768px) {
+    .starCardDiv h1 {
+      font-size: 14px; /* Adjust font size for smaller screens */
+      margin-top: 50px; /* Adjust top margin */
+    }
+  }
+  
+  .starCardDiv pre {
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: 600;
+    color: rgb(155, 154, 154);
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive adjustments for pre element */
+  @media (max-width: 768px) {
+    .starCardDiv pre {
+      font-size: 12px; /* Reduce font size for smaller screens */
+      margin-top: 3px; /* Adjust margin */
+    }
+  }
   .starCardDiv a {
     font-size: 18px;
     font-weight: 600;
@@ -394,6 +984,64 @@
     text-align: center;
   }
   
+/* Adjust for smaller screens */
+@media (max-width: 1024px) {
+  .starCardDiv a {
+    font-size: 16px; /* Reduce font size for medium screens */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .starCardDiv a {
+    font-size: 14px; /* Further reduce font size for smaller screens */
+  }
+}
+
+.portfolioDiv {
+  height: 731px;
+  width: 100%;
+  border: 2px solid transparent;
+  text-align: center;
+  background-color: #212121;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 1024px) {
+  .portfolioDiv {
+    height: auto; /* Adjust height for medium screens */
+    padding: 20px; /* Add padding for better spacing */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .portfolioDiv {
+    height: auto; /* Adjust height for smaller screens */
+    padding: 15px; /* Add padding for better spacing */
+  }
+}
+
+.portfolioTopDiv {
+  width: 100%;
+  height: 200px;
+  border: 2px solid transparent;
+  text-align: center;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 1024px) {
+  .portfolioTopDiv {
+    height: 180px; /* Reduce height for medium screens */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .portfolioTopDiv {
+    height: 150px; /* Reduce height further for smaller screens */
+  }
+}
   .portfolioTopDiv h1 {
     font-size: 45px;
     font-weight: 600;
@@ -432,7 +1080,110 @@
       color: #ff831e;
     }
   }
+  @media (max-width: 1024px) {
+    .portfolioTopDiv h1 {
+      font-size: 40px; /* Reduce font size for medium screens */
+    }
+  }
   
+  /* For mobile devices */
+  @media (max-width: 768px) {
+    .portfolioTopDiv h1 {
+      font-size: 30px; /* Reduce font size for smaller screens */
+      margin-top: 20px; /* Adjust margin for mobile screens */
+    }
+  }
+  
+  .portfolioTopDiv pre {
+    font-size: 14px;
+    font-weight: 600;
+    color: #a4a4a4;
+    margin-top: 10px;
+  }
+  
+  /* Adjust for smaller screens */
+  @media (max-width: 1024px) {
+    .portfolioTopDiv pre {
+      font-size: 13px; /* Reduce font size for medium screens */
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 768px) {
+    .portfolioTopDiv pre {
+      font-size: 12px; /* Reduce font size for smaller screens */
+      margin-top: 8px; /* Adjust margin for mobile screens */
+    }
+  }
+  
+  .portfolioTopDiv ul {
+    border: 2px solid transparent;
+    height: 68px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Adjust for smaller screens */
+  @media (max-width: 1024px) {
+    .portfolioTopDiv ul {
+      height: 60px; /* Reduce height for medium screens */
+      gap: 12px; /* Reduce gap for medium screens */
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 768px) {
+    .portfolioTopDiv ul {
+      height: 50px; /* Reduce height for smaller screens */
+      gap: 8px; /* Reduce gap for mobile screens */
+    }
+  }
+  
+  .portfolioTopDiv ul li {
+    list-style: none;
+    display: inline-block;
+  }
+  
+  /* Adjust for smaller screens */
+  @media (max-width: 1024px) {
+    .portfolioTopDiv ul li {
+      font-size: 18px; /* Adjust font size for medium screens */
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 768px) {
+    .portfolioTopDiv ul li {
+      font-size: 16px; /* Adjust font size for mobile screens */
+    }
+  }
+  
+  .portfolioTopDiv ul li a {
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .portfolioTopDiv ul li a:hover {
+    color: #ff831e;
+  }
+  
+  /* Adjust for smaller screens */
+  @media (max-width: 1024px) {
+    .portfolioTopDiv ul li a {
+      font-size: 18px; /* Adjust font size for medium screens */
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 768px) {
+    .portfolioTopDiv ul li a {
+      font-size: 16px; /* Adjust font size for mobile screens */
+    }
+  }
   .portfolioBottomDiv{
     width: 100%;
     height: auto;
@@ -487,6 +1238,28 @@
   .c10{
     background-color: #5e5e5e;
   }
+  @media (max-width: 1024px) {
+    .portfolioBottomDiv {
+      grid-template-columns: repeat(3, 1fr); /* 3 items per row on tablets */
+      gap: 15px; /* Adjust gap for tablets */
+    }
+  }
+  
+  /* Small screens (mobiles) */
+  @media (max-width: 768px) {
+    .portfolioBottomDiv {
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile */
+      gap: 10px; /* Adjust gap for mobile */
+    }
+  }
+  
+  /* Very small screens (portrait mobiles) */
+  @media (max-width: 480px) {
+    .portfolioBottomDiv {
+      grid-template-columns: 1fr; /* 1 item per row on very small screens */
+      gap: 8px; /* Adjust gap for very small screens */
+    }
+  }
   .processdiv{
     width: 100%;
     height: 510px;
@@ -518,6 +1291,66 @@
       overflow: hidden;
   
     }
+    @media (max-width: 1024px) {
+      .processdiv h1 {
+        font-size: 36px; /* Adjust font size for tablets */
+        margin-top: 60px; /* Adjust margin for tablets */
+      }
+    
+      .processdiv pre {
+        font-size: 12px; /* Adjust font size for tablets */
+        margin-top: 8px; /* Adjust margin for tablets */
+        margin-bottom: 30px; /* Adjust margin for tablets */
+      }
+    
+      .processiconsdiv {
+        width: 90%; /* Reduce width for tablets */
+        height: auto; /* Adjust height for tablets */
+        gap: 30px; /* Adjust gap for tablets */
+      }
+    }
+    
+    /* Small screens (mobile devices) */
+    @media (max-width: 768px) {
+      .processdiv h1 {
+        font-size: 30px; /* Adjust font size for mobile */
+        margin-top: 50px; /* Adjust margin for mobile */
+      }
+    
+      .processdiv pre {
+        font-size: 12px; /* Adjust font size for mobile */
+        margin-top: 5px; /* Adjust margin for mobile */
+        margin-bottom: 20px; /* Adjust margin for mobile */
+      }
+    
+      .processiconsdiv {
+        width: 100%; /* Ensure icons take full width on mobile */
+        height: auto; /* Adjust height for mobile */
+        flex-direction: column; /* Stack icons vertically on mobile */
+        gap: 20px; /* Adjust gap for mobile */
+      }
+    }
+    
+    /* Very small screens (portrait mobile devices) */
+    @media (max-width: 480px) {
+      .processdiv h1 {
+        font-size: 24px; /* Adjust font size for very small screens */
+        margin-top: 40px; /* Adjust margin for very small screens */
+      }
+    
+      .processdiv pre {
+        font-size: 12px; /* Adjust font size for very small screens */
+        margin-top: 5px; /* Adjust margin for very small screens */
+        margin-bottom: 15px; /* Adjust margin for very small screens */
+      }
+    
+      .processiconsdiv {
+        width: 100%; /* Ensure icons take full width on very small screens */
+        height: auto; /* Adjust height for very small screens */
+        flex-direction: column; /* Stack icons vertically */
+        gap: 15px; /* Adjust gap for very small screens */
+      }
+    }
    .processiconsdiv .icondiv{
     width: 157px;
     height: 100%;
@@ -545,7 +1378,52 @@
     width: 64px;
     background-color: #d1d2d4;
    }
+   @media (max-width: 1024px) {
+    .processiconsdiv .icondiv {
+      width: 120px; /* Adjust icon width on tablets */
+    }
   
+    .processiconsdiv .icondiv .circlediv {
+      width: 130px; /* Adjust circle size on tablets */
+      height: 130px; /* Adjust circle size on tablets */
+    }
+  
+    .processiconsdiv .icondiv .circlediv::after {
+      width: 50px; /* Adjust connecting line width on tablets */
+    }
+  }
+  
+  /* Small screens (mobile devices) */
+  @media (max-width: 768px) {
+    .processiconsdiv .icondiv {
+      width: 100px; /* Adjust icon width on mobile */
+    }
+  
+    .processiconsdiv .icondiv .circlediv {
+      width: 120px; /* Adjust circle size on mobile */
+      height: 120px; /* Adjust circle size on mobile */
+    }
+  
+    .processiconsdiv .icondiv .circlediv::after {
+      width: 40px; /* Adjust connecting line width on mobile */
+    }
+  }
+  
+  /* Very small screens (portrait mobile devices) */
+  @media (max-width: 480px) {
+    .processiconsdiv .icondiv {
+      width: 90px; /* Adjust icon width on very small screens */
+    }
+  
+    .processiconsdiv .icondiv .circlediv {
+      width: 100px; /* Adjust circle size on very small screens */
+      height: 100px; /* Adjust circle size on very small screens */
+    }
+  
+    .processiconsdiv .icondiv .circlediv::after {
+      width: 30px; /* Adjust connecting line width on very small screens */
+    }
+  }
    .countrounddiv{
     position: absolute;
     top: -19px;
@@ -573,6 +1451,79 @@
   
     margin-top: 16px;
    }
+   @media (max-width: 1024px) { 
+    .countrounddiv {
+      height: 30px;
+      width: 30px;
+      font-size: 18px; /* Smaller font size for tablets */
+    }
+  }
+  
+  @media (max-width: 768px) { 
+    .countrounddiv {
+      height: 28px;
+      width: 28px;
+      font-size: 16px; /* Further reduction in font size for mobile devices */
+    }
+  }
+  
+  @media (max-width: 480px) { 
+    .countrounddiv {
+      height: 25px;
+      width: 25px;
+      font-size: 14px; /* Further reduction in font size for very small screens */
+    }
+  }
+  
+  .icondiv h1 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 19px;
+    color: #484646;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 1024px) { 
+    .icondiv h1 {
+      font-size: 14px; /* Reduce font size on tablets */
+    }
+  }
+  
+  @media (max-width: 768px) { 
+    .icondiv h1 {
+      font-size: 12px; /* Further reduction in font size for mobile devices */
+    }
+  }
+  
+  @media (max-width: 480px) { 
+    .icondiv h1 {
+      font-size: 10px; /* Further reduction in font size for very small screens */
+    }
+  }
+  
+  .icondiv pre {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 1024px) { 
+    .icondiv pre {
+      font-size: 12px; /* Reduce font size for tablets */
+    }
+  }
+  
+  @media (max-width: 768px) { 
+    .icondiv pre {
+      font-size: 10px; /* Further reduction in font size for mobile devices */
+    }
+  }
+  
+  @media (max-width: 480px) { 
+    .icondiv pre {
+      font-size: 8px; /* Further reduction in font size for very small screens */
+    }
+  }
   .aboutdiv{
     width: 100%;
     height: 540px;
@@ -593,6 +1544,54 @@
     color: #a4a4a4;;
     margin-top: 10px;
     margin-bottom: 39px;
+  }
+  @media (max-width: 1024px) { 
+    .aboutdiv h1 {
+      font-size: 38px; /* Reduce font size for tablets */
+    }
+  }
+  
+  @media (max-width: 768px) { 
+    .aboutdiv h1 {
+      font-size: 32px; /* Reduce font size for mobile devices */
+      margin-top: 30px; /* Adjust margin for mobile */
+    }
+  }
+  
+  @media (max-width: 480px) { 
+    .aboutdiv h1 {
+      font-size: 28px; /* Further reduction for very small screens */
+      margin-top: 24px; /* Adjust margin for very small screens */
+    }
+  }
+  
+  .aboutdiv pre {
+    font-size: 14px;
+    font-weight: 600;
+    color: #a4a4a4;
+    margin-top: 10px;
+    margin-bottom: 39px;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 1024px) { 
+    .aboutdiv pre {
+      font-size: 12px; /* Reduce font size for tablets */
+    }
+  }
+  
+  @media (max-width: 768px) { 
+    .aboutdiv pre {
+      font-size: 11px; /* Reduce font size for mobile devices */
+      margin-bottom: 25px; /* Adjust margin for mobile */
+    }
+  }
+  
+  @media (max-width: 480px) { 
+    .aboutdiv pre {
+      font-size: 10px; /* Further reduction for very small screens */
+      margin-bottom: 20px; /* Adjust margin for very small screens */
+    }
   }
   .peoplereviewsdiv{
   
@@ -619,7 +1618,46 @@
   
   
   }
+  @media (max-width: 1024px) {
+    .peoplereviewsdiv {
+      grid-template-columns: auto auto; /* Keep the 2-column layout for tablets */
+    }
   
+    .peoplereviewsdiv .review {
+      width: 100%; /* Allow the review to take full width on smaller screens */
+    }
+  
+    .peoplereviewsdiv .review .profilediv {
+      width: 90px; /* Adjust profile picture size for tablets */
+      height: 90px;
+      margin-left: 10px; /* Reduce margin on smaller screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .peoplereviewsdiv {
+      grid-template-columns: 1fr; /* Stack reviews in one column on mobile */
+    }
+  
+    .peoplereviewsdiv .review {
+      width: 100%; /* Reviews take full width */
+      height: auto; /* Allow height to adjust based on content */
+    }
+  
+    .peoplereviewsdiv .review .profilediv {
+      width: 80px; /* Adjust profile picture size for mobile */
+      height: 80px;
+      margin-left: 10px;
+      margin-top: 10px; /* Adjust top margin for better alignment */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .peoplereviewsdiv .review .profilediv {
+      width: 70px; /* Further adjust profile picture size for very small screens */
+      height: 70px;
+    }
+  }
   .profilediv img{
     width: 100%;
     height: 100%;
@@ -647,6 +1685,42 @@
     margin-top: 10px;
     
   }
+  @media (max-width: 1024px) {
+    .reviewrightdiv {
+      width: 350px; /* Slightly smaller width on tablets */
+    }
+  }
+  
+  /* Responsive adjustments for mobile screens */
+  @media (max-width: 768px) {
+    .reviewrightdiv {
+      width: 100%; /* Full width on mobile screens */
+      margin-left: 0; /* Remove left margin for mobile */
+    }
+  
+    .reviewrightdiv h1 {
+      font-size: 14px; /* Smaller font size for smaller screens */
+    }
+  
+    .reviewrightdiv pre {
+      font-size: 12px; /* Smaller font size for better readability */
+    }
+  }
+  
+  /* Further adjustments for very small screens (e.g., mobile landscape) */
+  @media (max-width: 480px) {
+    .reviewrightdiv {
+      padding: 10px; /* Reduce padding on small screens */
+    }
+  
+    .reviewrightdiv h1 {
+      font-size: 12px; /* Further reduce the font size for tiny screens */
+    }
+  
+    .reviewrightdiv pre {
+      font-size: 11px; /* Smaller font size */
+    }
+  }
   .skillsDiv {
     width: 100%;
     height: 490px;
@@ -667,6 +1741,39 @@
     font-size: 14px;
     font-weight: 600;
     color: #bdbec1;
+  }
+  @media (max-width: 1024px) {
+    .skillsDiv h1 {
+      font-size: 38px; /* Slightly smaller font on tablets */
+    }
+  
+    .skillsDiv pre {
+      font-size: 13px; /* Smaller font size for better readability on tablets */
+    }
+  }
+  
+  /* Responsive Adjustments for Mobile */
+  @media (max-width: 768px) {
+    .skillsDiv h1 {
+      font-size: 32px; /* Smaller font size on mobile */
+    }
+  
+    .skillsDiv pre {
+      font-size: 12px; /* Smaller font size for better readability on mobile */
+      margin-top: 10px; /* Adjust margin to fit the mobile layout */
+    }
+  }
+  
+  /* Further Adjustments for Very Small Screens (e.g., mobile landscape) */
+  @media (max-width: 480px) {
+    .skillsDiv h1 {
+      font-size: 28px; /* Further reduce the font size for tiny screens */
+    }
+  
+    .skillsDiv pre {
+      font-size: 11px; /* Smaller font size */
+      margin-top: 8px; /* Adjust margin for small screens */
+    }
   }
   
   .circleProgessDiv {
@@ -702,6 +1809,86 @@
     align-items: center;
   }
   
+
+
+/* Border Circle */
+.borderCircle {
+  width: 172px;
+  height: 172px;
+  margin-top: 13px;
+  margin-left: 14px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Top Border Circle */
+.topBorderCircle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Adjustments for Tablets */
+@media (max-width: 1024px) {
+  .circleProgessDiv {
+    width: 90%; /* Make the container width responsive */
+    gap: 40px; /* Reduce gap between circles */
+  }
+
+  .borderCircle {
+    width: 150px; /* Reduce the size of the circles */
+    height: 150px;
+  }
+
+  .topBorderCircle {
+    width: 170px; /* Reduce the size of the top border circle */
+    height: 170px;
+  }
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+  .circleProgessDiv {
+    width: 100%; /* Full width on mobile */
+    gap: 30px; /* Further reduce the gap */
+    margin-top: 20px; /* Adjust margin for mobile */
+  }
+
+  .borderCircle {
+    width: 130px; /* Reduce the size of circles even more */
+    height: 130px;
+  }
+
+  .topBorderCircle {
+    width: 150px; /* Reduce the top border circle */
+    height: 150px;
+  }
+}
+
+/* Further Adjustments for Very Small Screens (e.g., mobile landscape) */
+@media (max-width: 480px) {
+  .circleProgessDiv {
+    width: 100%; /* Full width on tiny screens */
+    gap: 20px; /* Very small gap between circles */
+  }
+
+  .borderCircle {
+    width: 110px; /* Make circles smaller */
+    height: 110px;
+  }
+
+  .topBorderCircle {
+    width: 130px; /* Make top circle smaller */
+    height: 130px;
+  }
+}
   .innerBorderCircle {
     width: 130px;
     height: 130px;
@@ -928,4 +2115,112 @@
     font-size: 18px;
     margin-left: 10px;
   }
+  
+
+
+
+/* For Tablets and smaller screens */
+@media (max-width: 1024px) {
+  .contactInputDiv {
+    width: 90%;
+    gap: 15px;
+  }
+
+  .contactInputDiv input,
+  .contactInputDiv button {
+    width: 100%;
+    height: 45px;
+  }
+
+  .mapH1,
+  .mapPhoneDiv {
+    width: 90%;
+  }
+
+  .footerfirstDiv,
+  .footerSecDiv {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .footerfirstDiv,
+  .footerSecDiv {
+    margin: 10px 0;
+  }
+}
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+  .contactDiv h1 {
+    font-size: 50px;
+  }
+
+  .contactInputDiv {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footerfirstDiv img {
+    width: 120px;
+  }
+
+  .footerSecDiv {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  footer {
+    flex-direction: column;
+    height: auto;
+    padding-top: 30px;
+  }
+
+  .mapH1 p,
+  .mapPhoneDiv p {
+    font-size: 18px;
+  }
+}
+
+/* For Small Mobile Devices */
+@media (max-width: 480px) {
+  .contactDiv h1 {
+    font-size: 40px;
+  }
+
+  .contactInputDiv input {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .contactInputDiv button {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  footer {
+    padding-top: 20px;
+  }
+
+  .footerfirstDiv p {
+    font-size: 12px;
+  }
+
+  .footerSecDiv h1 {
+    font-size: 20px;
+  }
+
+  .footerSecDiv ul li a {
+    font-size: 16px;
+  }
+}
+
+
+
+
   
